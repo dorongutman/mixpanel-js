@@ -3024,4 +3024,9 @@ Globals should be all caps
     // fallback handler, always will work
     _.register_event(window, 'load', dom_loaded_handler, true);
 
+    if (typeof define === 'function' && define.amd) {
+        define('mixpanel', [], function() {
+            return mixpanel;
+        });
+    }
 })(window['mixpanel']);
